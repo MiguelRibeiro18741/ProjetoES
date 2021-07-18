@@ -2,14 +2,15 @@ import java.time.LocalDate;
 
 public class Fraude {
     private static int i=0;
-    private Integer idFraude;
+    private Integer idFraude = getProximo();
     private java.time.LocalDate dataFraude;
+    private java.lang.String descricaoFraude;
     private Funcionario funcionario;
     private EmprestimoEbook emprestimoEbook;
 
-    public Fraude(LocalDate dataFraude, Funcionario funcionario, EmprestimoEbook emprestimoEbook) {
-        this.idFraude = getProximo();
+    public Fraude(LocalDate dataFraude, String descricaoFraude , Funcionario funcionario, EmprestimoEbook emprestimoEbook) {
         this.dataFraude = dataFraude;
+        this.descricaoFraude = descricaoFraude;
         this.funcionario = funcionario;
         this.emprestimoEbook = emprestimoEbook;
     }
@@ -22,6 +23,8 @@ public class Fraude {
         return dataFraude;
     }
 
+    public String getDescricaoFraude() { return descricaoFraude; }
+
     public Funcionario getFuncionario() {
         return funcionario;
     }
@@ -33,6 +36,8 @@ public class Fraude {
     public void setDataFraude(LocalDate dataFraude) {
         this.dataFraude = dataFraude;
     }
+
+    public void setDescricaoFraude(String descricaoFraude) { this.descricaoFraude = descricaoFraude; }
 
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;

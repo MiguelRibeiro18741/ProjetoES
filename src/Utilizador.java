@@ -1,6 +1,6 @@
 public class Utilizador {
     private static int i =0;
-    private Integer numMec;
+    private Integer numMec = getProximo();
     private java.lang.String nome;
     private java.lang.String password;
     private java.lang.String morada;
@@ -9,7 +9,6 @@ public class Utilizador {
     private TipoUtilizador tipoUtilizador;
 
     public Utilizador(String nome, String password, String morada, String email, String estado, TipoUtilizador tipoUtilizador) {
-        this.numMec = getProximo();
         this.nome = nome;
         this.password = password;
         this.morada = morada;

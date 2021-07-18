@@ -1,6 +1,6 @@
 public class Livro {
     private static int i =0;
-    private Integer idLivro;
+    private Integer idLivro = getProximo();
     private java.lang.String titulo;
     private java.lang.String autor;
     private Integer ano;
@@ -8,7 +8,6 @@ public class Livro {
     private Editora editora;
 
     public Livro(String titulo, String autor, Integer ano, String ISBN, Editora editora) {
-        this.idLivro = getProximo();
         this.titulo = titulo;
         this.autor = autor;
         this.ano = ano;

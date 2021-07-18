@@ -4,13 +4,12 @@ import java.util.List;
 
 public class Encomenda {
     private static int i =0;
-    private Integer idEncomenda;
+    private Integer idEncomenda = getProximo();
     private java.time.LocalDate dataEncomenda;
     private EntradaNovoLivro entradaNovoLivro;
     private List<Livro> ListaLivros;
 
     public Encomenda(LocalDate dataEncomenda, EntradaNovoLivro entradaNovoLivro) {
-        this.idEncomenda = getProximo();
         this.dataEncomenda = dataEncomenda;
         this.entradaNovoLivro = entradaNovoLivro;
         this.ListaLivros = new ArrayList<>();

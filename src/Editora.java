@@ -1,11 +1,10 @@
 public class Editora {
     private static int i =0;
-    private Integer idEditora;
+    private Integer idEditora = getProximo();
     private java.lang.String termoResponsabilidade;
     private java.lang.String nomeEditora;
 
     public Editora(String termoResponsabilidade, String nomeEditora) {
-        this.idEditora = getProximo();
         this.termoResponsabilidade = termoResponsabilidade;
         this.nomeEditora = nomeEditora;
     }

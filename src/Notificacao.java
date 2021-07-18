@@ -2,13 +2,12 @@ import java.time.LocalDate;
 
 public class Notificacao {
     private static int i =0;
-    private Integer idNotif;
+    private Integer idNotif = getProximo();
     private java.time.LocalDate dataHoraNotif;
     private TipoNotificacao tipoNotificacao;
     private Emprestimo emprestimo;
 
     public Notificacao(LocalDate dataHoraNotif, TipoNotificacao tipoNotificacao, Emprestimo emprestimo) {
-        this.idNotif = getProximo();
         this.dataHoraNotif = dataHoraNotif;
         this.tipoNotificacao = tipoNotificacao;
         this.emprestimo = emprestimo;

@@ -1,12 +1,11 @@
 public class Funcionario {
     private static int i =0;
-    private Integer idFunci;
+    private Integer idFunci = getProximo();
     private java.lang.String nomeFunci;
     private java.lang.String moradaFunci;
     private java.lang.String emailFunci;
 
     public Funcionario(String nomeFunci, String moradaFunci, String emailFunci) {
-        this.idFunci = getProximo();
         this.nomeFunci = nomeFunci;
         this.moradaFunci = moradaFunci;
         this.emailFunci = emailFunci;

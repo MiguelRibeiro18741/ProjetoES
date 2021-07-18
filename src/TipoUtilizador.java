@@ -1,11 +1,10 @@
 public class TipoUtilizador {
     private static int i =0;
-    private Integer idTipo;
+    private Integer idTipo = getProximo();
     private Integer prazoEmp;
     private Integer maxLivros;
 
     public TipoUtilizador(Integer prazoEmp, Integer maxLivros) {
-        this.idTipo = getProximo();
         this.prazoEmp = prazoEmp;
         this.maxLivros = maxLivros;
     }

@@ -1,10 +1,9 @@
 public class TipoNotificacao {
     private static int i =0;
-    private Integer idTipoNotif;
+    private Integer idTipoNotif = getProximo();
     private java.lang.String texto;
 
     public TipoNotificacao(String texto) {
-        this.idTipoNotif = getProximo();
         this.texto = texto;
     }
 

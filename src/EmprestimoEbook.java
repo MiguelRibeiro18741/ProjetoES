@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 public class EmprestimoEbook {
     private static int i =0;
-    private Integer idEmpEbook;
+    private Integer idEmpEbook = getProximo();
     private java.time.LocalDate dataHoraEmpEbook;
     private java.time.LocalDate dataExpiracao;
     private Integer vezesProlongado;
@@ -10,7 +10,6 @@ public class EmprestimoEbook {
     private Utilizador utilizador;
 
     public EmprestimoEbook(LocalDate dataHoraEmpEbook, LocalDate dataExpiracao, Integer vezesProlongado, CopiaEbook copiaEbook, Utilizador utilizador) {
-        this.idEmpEbook = getProximo();
         this.dataHoraEmpEbook = dataHoraEmpEbook;
         this.dataExpiracao = dataExpiracao;
         this.vezesProlongado = vezesProlongado;

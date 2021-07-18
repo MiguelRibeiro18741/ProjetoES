@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Ebook extends Livro{
     private static int i=0;
-    private Integer idEbook;
+    private Integer idEbook = getProximo();
     private java.lang.String formato;
     private Integer tamanhoFicheiro;
     private java.lang.String assinaturaHash;
@@ -10,7 +10,6 @@ public class Ebook extends Livro{
 
     public Ebook(String titulo, String autor, Integer ano, String ISBN, Editora editora, String formato, Integer tamanhoFicheiro, String assinaturaHash) {
         super(titulo, autor, ano, ISBN, editora);
-        this.idEbook = getProximo();
         this.formato = formato;
         this.tamanhoFicheiro = tamanhoFicheiro;
         this.assinaturaHash = assinaturaHash;

@@ -1,11 +1,10 @@
 public class CopiaEbook {
     private static int i =0;
-    private Integer idCopiaEbook;
+    private Integer idCopiaEbook = getProximo();
     private Servidor servidor;
     private Ebook ebook;
 
     public CopiaEbook(Servidor servidor, Ebook ebook) {
-        this.idCopiaEbook = getProximo();
         this.servidor = servidor;
         this.ebook = ebook;
     }

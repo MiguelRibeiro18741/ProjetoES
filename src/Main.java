@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 
 public class Main {
-    public static void main(){
+    public static void main(String[] args){
         TipoUtilizador tipoUtilizador = new TipoUtilizador(2, 8);
         Utilizador utilizador = new Utilizador("Miguel", "12ab34cd", "Rua dos colegios nº10", "miguel@gmail.com", "Ativo", tipoUtilizador);
         Funcionario funcionario = new Funcionario("Alberto", "Rua dos cães nº7", "joaquim@gmail.com");
@@ -12,8 +12,6 @@ public class Main {
         Ebook ebook = new Ebook("Harry Potter", "JKR", 2000, "1a2b3c", editora, "pdf", 50, "assinatura");
         Servidor servidor = new Servidor("Aveiro");
         CopiaEbook copiaEbook= new CopiaEbook(servidor, ebook);
-
-        //Ebook.adicionaCopias(Copia)
 
         int prazoEmp = utilizador.getTipoUtilizador().getPrazoEmp();
         LocalDate dataExpiracaoEmp = LocalDate.now().plusDays(prazoEmp);
@@ -27,7 +25,7 @@ public class Main {
         System.out.printf("Data de entrega após prolongamento: %s\n", emprestimoEbook.getDataExpiracao().toString());
         System.out.printf("Número de vezes prolongado após prolongamento: %d\n", emprestimoEbook.getVezesProlongado());
 
-        Fraude detecaoFraude = new Fraude(LocalDate.now(), funcionario, emprestimoEbook);
+        Fraude detecaoFraude = new Fraude(LocalDate.now(), "Fraude no download" ,funcionario, emprestimoEbook);
 
         System.out.printf("Nome do utilizador: %s\n", utilizador.getNome());
         System.out.printf("Tipo do utilizador: %s\n", utilizador.getTipoUtilizador());
@@ -43,9 +41,9 @@ public class Main {
         repositorio.adicionacopiaEbooks(copiaEbook);
         repositorio.adicionadetecaoFraudes(detecaoFraude);
 
-        EmprestimoEbook emprestimoEbook1 = repositorio.devolveEmpEB(emprestimoEbook.getIdEmpEbook());
+        EmprestimoEbook emprestimoEbookCriado = repositorio.devolveEmpEB(emprestimoEbook.getIdEmpEbook());
 
-        System.out.printf("Repositório: %s\n", emprestimoEbook1.getIdEmpEbook());
-        System.out.printf("Nome do Ebook devolvido: %s\n", emprestimoEbook1.getCopiaEbook().getEbook().getTitulo());
+        System.out.printf("Repositório: %s\n", emprestimoEbookCriado.getIdEmpEbook());
+        System.out.printf("Nome do Ebook devolvido: %s\n", emprestimoEbookCriado.getCopiaEbook().getEbook().getTitulo());
     }
 }

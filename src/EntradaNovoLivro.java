@@ -2,11 +2,10 @@ import java.time.LocalDate;
 
 public class EntradaNovoLivro {
     private static int i =0;
-    private Integer idEntNovoLivro;
+    private Integer idEntNovoLivro = getProximo();
     private java.time.LocalDate dataEntrada;
 
     public EntradaNovoLivro(LocalDate dataEntrada) {
-        this.idEntNovoLivro = getProximo();
         this.dataEntrada = dataEntrada;
     }
 
